@@ -18,6 +18,7 @@
             this.currentUrl = '';
         }
 
+        /* 存放路由以及对应的回调 */
         route(path, callback = () => { }) {
             this.routes[path] = callback;
         }

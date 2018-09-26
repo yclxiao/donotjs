@@ -1,0 +1,61 @@
+<html>
+<header></header>
+
+<body>
+    <h1 id="id"></h1>
+    <a href="#/id1">id1</a>
+    <a href="#/id2">id2</a>
+    <a href="#/id3">id3</a>
+</body>
+
+<script type="module">
+
+    //简单实现一个Router，顺便理解下router的原理
+
+    class Router {
+        constructor() {
+            this.routes = {};
+            this.currentUrl = '';
+        }
+
+        route(path, callback = () => { }) {
+            this.routes[path] = callback;
+        }
+
+        refresh() {
+            this.currentUrl = location.hash.slice(1) || '/';
+            this.routes[this.currentUrl] && this.routes[this.currentUrl]();
+        }
+
+        init() {
+            window.addEventListener('load', this.refresh.bind(this), false);
+            window.addEventListener('hashchange', this.refresh.bind(this), false);
+        }
+
+    }
+
+    window.Router = new Router();
+    window.Router.init();
+
+    window.Router.route('/id1', () => {
+        document.getElementById('id').innerHTML = 'id1';
+    });
+
+    window.Router.route('/id2', () => {
+        document.getElementById('id').innerHTML = 'id2';
+    });
+
+    /* const str = `
+        <div>
+            我是import进来的JS文件
+        </div>
+    `;
+    document.getElementById('id').innerHTML = str;
+
+    window.addEventListener('hashchange', function (e) {
+        e.preventDefault();
+        document.getElementById('id').innerHTML = location.hash;
+    }); */
+</script>
+
+</html>

@@ -55,7 +55,7 @@ module.exports = {
       template: __dirname + "/app/index.tmpl.html" //new 一个这个插件的实例，并传入相关的参数
     }),
     new webpack.HotModuleReplacementPlugin(), //热加载插件
-    new CleanWebpackPlugin("build/*.*", {
+    new CleanWebpackPlugin(['build'], {
       root: __dirname,
       verbose: true,
       dry: false

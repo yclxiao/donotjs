@@ -35,6 +35,7 @@ higerFun(function (param) {
 function New(func) {
   var res = {};
   if (func.prototype !== null) {
+    //原型链：
     //儿子的prototype 包含了自定义的原型方法，以及__proto__，此__proto__指向了父亲的prototype.
     //父亲的protytype中的__proto__最终指向Object的prototype，Object的prototype里的__proto__是null.
     //构造函数constructor包含在prototype中

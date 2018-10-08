@@ -73,7 +73,6 @@ console.log(s1.getGrade());
 console.log(s1.getName());
  */
 
-
 /* 
 //对象的属性描述
 var person = {
@@ -100,20 +99,27 @@ var descrptor = Object.getOwnPropertyDescriptor(person,'name');
 console.log(descrptor); */
 
 
+/* 
 //get/set , get和set都是针对于 name属性的 value描述而言的
-var persion = {}
-Object.defineProperty(persion,'name',{
-    get: function () {
-        // this.value = 'tom'
-        return this.value;
-    },
-    set: function (newVal) {
-        console.log(newVal);
-        this.value = newVal
-    }
-})
+var persion = {};
+Object.defineProperty(persion, "name", {
+  get: function() {
+    // this.value = 'tom'
+    return this.value;
+  },
+  set: function(newVal) {
+    console.log(newVal);
+    this.value = newVal;
+  }
+});
 
 console.log(persion.name);
 persion.name = "ycl";
 console.log(persion.name);
+ */
 
+// 箭头函数中的 this，就是声明函数时所处上下文中的 this，它不会被其他方式所改变
+// 在 ES6 中，使用...来表示展开运算符，它可 以展开数组/对象 。如果不使用展开运算符，则对象/数组还保持原样
+const arrl = [1, 2, 3];
+const arr2 = [...arrl, 4, 5, 6];
+console.log(arr2)

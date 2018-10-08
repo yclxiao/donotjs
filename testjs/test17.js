@@ -26,6 +26,17 @@ class Person {
 
 console.log(Person.prototype);
 
+class Student extends Person {
+  constructor(name, age, grade, classes) {
+    super(name, age, grade);
+    this.class = this.classes;
+  }
+
+  getClasses() {
+    return this.class;
+  }
+}
+
 //////////////////////以上代码经过babel转换之后变为/////////////////////////
 
 ("use strict");
@@ -47,13 +58,44 @@ var _createClass = (function() {
   };
 })();
 
+function _possibleConstructorReturn(self, call) {
+  if (!self) {
+    throw new ReferenceError(
+      "this hasn't been initialised - super() hasn't been called"
+    );
+  }
+  return call && (typeof call === "object" || typeof call === "function")
+    ? call
+    : self;
+}
+
+function _inherits(subClass, superClass) {
+  if (typeof superClass !== "function" && superClass !== null) {
+    throw new TypeError(
+      "Super expression must either be null or a function, not " +
+        typeof superClass
+    );
+  }
+  subClass.prototype = Object.create(superClass && superClass.prototype, {
+    constructor: {
+      value: subClass,
+      enumerable: false,
+      writable: true,
+      configurable: true
+    }
+  });
+  if (superClass)
+    Object.setPrototypeOf
+      ? Object.setPrototypeOf(subClass, superClass)
+      : (subClass.__proto__ = superClass);
+}
+
 function _classCallCheck(instance, Constructor) {
   if (!(instance instanceof Constructor)) {
     throw new TypeError("Cannot call a class as a function");
   }
 }
 
-//以es6的语法写个类
 var Person = (function() {
   function Person(name, age, grade) {
     var _this = this;
@@ -93,3 +135,35 @@ var Person = (function() {
 Person.a = 20;
 
 console.log(Person.prototype);
+
+var Student = (function(_Person) {
+  _inherits(Student, _Person);
+
+  function Student(name, age, grade, classes) {
+    _classCallCheck(this, Student);
+
+    var _this2 = _possibleConstructorReturn(
+      this,
+      (Student.__proto__ || Object.getPrototypeOf(Student)).call(
+        this,
+        name,
+        age,
+        grade
+      )
+    );
+
+    _this2.class = _this2.classes;
+    return _this2;
+  }
+
+  _createClass(Student, [
+    {
+      key: "getClasses",
+      value: function getClasses() {
+        return this.class;
+      }
+    }
+  ]);
+
+  return Student;
+})(Person);

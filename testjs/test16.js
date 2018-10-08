@@ -34,7 +34,7 @@ Person.prototype.getName = function () {
 var p1 = new Person("ycl",31);
 p1.getName() */
 
-//对象的继承
+//ES5中的，对象的继承
 /* function Person(name, age) {
   this.name = name;
   this.age = age;

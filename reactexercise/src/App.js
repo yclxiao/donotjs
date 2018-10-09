@@ -3,11 +3,11 @@ import logo from './logo.svg';
 import './App.css';
 import Goodby from "./enhancecomponents/goodby";
 import Welcome from "./enhancecomponents/welcome";
+import ComponetOne from "./components/component-1";
+import ComponetTwo from "./components/component-2";
 
 class App extends Component {
   render() {
-    console.log(Welcome.aaa);
-    
     return (
       <div className="App">
         <header className="App-header">
@@ -26,6 +26,8 @@ class App extends Component {
         </header>
         <Goodby />
         <Welcome />
+        <ComponetOne />
+        <ComponetTwo />
       </div>
     );
   }

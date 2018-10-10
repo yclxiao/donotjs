@@ -1,7 +1,10 @@
 require('./index.scss')
 import $ from 'jquery'
-import _ from 'lodash'
+import _ from 'lodash';
+import { getRandom } from "./somemodules/util";
 window.onload = function() {
+    console.log(getRandom());
+    
     console.log(process.env.NODE_ENV)
     var text = document.getElementsByClassName('content-div')
     console.log(text.length)

@@ -100,7 +100,7 @@ module.exports = {
       cacheGroups: {
         commons: {
           chunks: "initial",
-          name: "common",
+          name: "common",//抽取出的公共引用，生成的js文件名是common-xxxxxx.js
           minChunks: 2,
           maxInitialRequests: 5, // The default limit is too small to showcase the effect
           minSize: 0, // This is example is too small to create commons chunks

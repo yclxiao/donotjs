@@ -9,7 +9,7 @@ const webpack = require('webpack')
 const baseConfig = require('./webpack.base')
 const merge = require('webpack-merge')
 
-const glob = require('glob')
+const glob = require('glob');//这个模块的作用：paths: glob.sync(path.join(__dirname, '../src/*.html'))，自动匹配文件夹下符合规则的的文件
 const PurifyCSSPlugin = require('purifycss-webpack')
 const WebpackParallelUglifyPlugin = require('webpack-parallel-uglify-plugin');//多线程压缩
 const OptimizeCSSPlugin = require('optimize-css-assets-webpack-plugin')

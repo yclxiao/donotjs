@@ -722,3 +722,8 @@ module.exports = merge(baseConfig, {
 - `dll`现在是生产环境打包模式，并且`vendor.dll.js`现在在生产环境下也会注入`HTML`模板中
 - 生产环境打包使用命令`npm run prod`
 - 修复了`process.env.NODE_ENV`在打包过程中取不到的问题 [issue2](https://github.com/wlx200510/webpack4.x-learn/issues/2)
+
+### 几个知识点：
+
+1. glob模块作用：https://www.cnblogs.com/lvdabao/p/5944420.html 、 https://www.cnblogs.com/waitforyou/p/7044171.html
+2. SplitChunksPlugin插件的一些用法：https://www.cnblogs.com/zhanyishu/p/9349576.html 、 https://blog.csdn.net/qq_26733915/article/details/79458533

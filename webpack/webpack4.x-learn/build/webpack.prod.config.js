@@ -11,7 +11,7 @@ const merge = require('webpack-merge')
 
 const glob = require('glob')
 const PurifyCSSPlugin = require('purifycss-webpack')
-const WebpackParallelUglifyPlugin = require('webpack-parallel-uglify-plugin')
+const WebpackParallelUglifyPlugin = require('webpack-parallel-uglify-plugin');//多线程压缩
 const OptimizeCSSPlugin = require('optimize-css-assets-webpack-plugin')
 
 module.exports = merge(baseConfig, {

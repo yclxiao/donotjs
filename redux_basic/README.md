@@ -155,3 +155,5 @@ store.dispatch({type : 'INCREMENT', caption: 'First'});
 通过上面一步一步的代码基本完成了一个阉割版的'Redux'。
 
 因为`Redux`的store封装的很好，没有提供直接修改状态的可能，也就是说一个组件虽然能够访问全局唯一的Store,却不可能直接修改Store中的状态，这样就克服了全局变量的危险；修改store数据只能通过统一的action行为，很容易跟踪调试，这在多人协作开发大型应用和排查问题时非常重要。
+
+当执行() => store.dispatch({ type: 'INCREMENT' })这段代码时，核心方法dispatch，dispatch方法里做了两件事：1. 根据传入的action重新计算出新的state   2. 根据哪些函数订阅了store，再遍历执行这些函数，这些函数的功能基本都是重新执行渲染render

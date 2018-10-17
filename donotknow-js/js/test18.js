@@ -30,7 +30,7 @@ console.log(factorial(5)); */
 console.log(fs(5)); */
 
 //递归函数，每次都会将函数的执行结果返回，函数继续执行自己
-function test(num) {
+/* function test(num) {
   if (num === 1) {
     return num;
   }
@@ -38,6 +38,17 @@ function test(num) {
   return num * test(num -1);
 }
 
-console.log(test(5))
+console.log(test(5)) */
 
 
+var foo = function() { // 赋给变量 foo 的匿名函数
+  console.log('foo')
+};
+
+var x = function bar(){ // 赋给变量 x 的命名函数 bar
+  console.log('bar');
+  
+};
+
+foo(); // 实际执行函数
+x();

@@ -12,6 +12,9 @@ const createStore = (reducer, initValues, enhancer) => {
 
 
     const dispatch = (action) => {
+
+        //TODO 在这个过程可以加入中间件，就是在dispatch之后，reducer之前加点料
+
         // 计算出新的state
         state = reducer(state, action);
         // state更新后的订阅的事件

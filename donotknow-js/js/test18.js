@@ -41,7 +41,7 @@ console.log(fs(5)); */
 console.log(test(5)) */
 
 
-var foo = function() { // 赋给变量 foo 的匿名函数
+/* var foo = function() { // 赋给变量 foo 的匿名函数
   console.log('foo')
 };
 
@@ -51,4 +51,24 @@ var x = function bar(){ // 赋给变量 x 的命名函数 bar
 };
 
 foo(); // 实际执行函数
-x();
+x(); */
+
+function add(x, y) {
+  return x + y;
+}
+
+var myObject = {
+  value: 1
+};
+myObject.double = function () {
+  var that = this; //此处因为是myObject.double()的调用方式，所以this是指myObject
+  var helpler = function () {
+    console.log(this);
+    console.log(that);
+    that.value = add(that.value, that.value);//that是由于先被赋值了，所以指的是myObject对象
+    this.value = add(this.value, this.value);//this只是全局对象，所以是undefine
+  }
+  helpler();//此处help是直接调用，this是指全局对象
+}
+myObject.double();
+console.log(myObject.value);

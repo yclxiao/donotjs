@@ -8,7 +8,6 @@
 
 console.log(factorial(5)); */
 
-
 // function factorial (n, total=1) {
 //     if(n === 1){
 //         return total
@@ -16,7 +15,6 @@ console.log(factorial(5)); */
 //     return factorial(n-1, n * total)
 // }
 // console.log(factorial(5))
-
 
 /* var fs = (function test(num){
   console.log(num)
@@ -40,7 +38,6 @@ console.log(fs(5)); */
 
 console.log(test(5)) */
 
-
 /* var foo = function() { // 赋给变量 foo 的匿名函数
   console.log('foo')
 };
@@ -53,6 +50,7 @@ var x = function bar(){ // 赋给变量 x 的命名函数 bar
 foo(); // 实际执行函数
 x(); */
 
+/* 
 function add(x, y) {
   return x + y;
 }
@@ -71,4 +69,16 @@ myObject.double = function () {
   helpler();//此处help是直接调用，this是指全局对象
 }
 myObject.double();
-console.log(myObject.value);
+console.log(myObject.value); */
+
+function foo(i) {
+  if (i < 0) {
+    return;
+  }
+
+  console.log("begin:" + i);
+  foo(i - 1);
+  console.log("end:" + i);
+}
+
+foo(3);
